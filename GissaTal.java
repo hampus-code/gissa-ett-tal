@@ -14,7 +14,7 @@ public class GissaTal {
     public GissaTal(){
         
        runGame();
-       restartGameOrNot(); 
+       
         
     }
 
@@ -29,14 +29,12 @@ public class GissaTal {
 
 
         do{
-                
             
-            //try{
 
-            counter++;
+             counter++;
             System.out.print("Gissning " + counter + ": ");
-            try{
-            userGuessedNumber = scanner.nextInt(); //Testa lägg try catch här
+             try{
+            userGuessedNumber = scanner.nextInt();
             //checkInput(userGuessedNumber);
 
             if (userGuessedNumber == rightNumber){
@@ -45,15 +43,16 @@ public class GissaTal {
                 restartGameOrNot();
                 
             }
-            if (userGuessedNumber > rightNumber){
+            else if (userGuessedNumber > rightNumber){
                 System.out.println("Talet är mindre, gissa igen!");
             }
             else if (userGuessedNumber < rightNumber){
                 System.out.println("Talet är större, gissa igen!");
             }
-             }
+              }
              catch (InputMismatchException e){
-                 System.out.println("Felaktig inmatning!");
+                counter --;
+                 System.out.println("Felaktig inmatning, du måste ange tal i siffror! Försök igen!");
                  scanner.next();
              }
         
@@ -75,26 +74,33 @@ public class GissaTal {
         }
         else if (continueOrNot.equalsIgnoreCase("N")){
             
-            System.out.println("Tack för den här gången");
+            System.out.println("Programmet avslutas, tack för den här gången");
             gameRunner = false;
             
                 
+        }
+        else {
+            System.out.println("Du måste ange eller J/N!");
+            restartGameOrNot();
         }
 
         
     }
 
-    // public void checkInput(int userGuessedNumber){
+/*     public void checkInput(int userGuessedNumber){
 
-    //     try{
-            
+    try{
+        
+            System.out.print("Gissning " + counter + ": ");
+            // try{
+            userGuessedNumber = scanner.nextInt();
 
-    //     }
-    //     catch (InputMismatchException e){
-    //         System.out.println("Felaktig inmatning!");
-    //         scanner.next();
-    //     }
-    // }
+    }
+    catch (InputMismatchException e){
+    System.out.println("Felaktig inmatning!");
+    scanner.next();
+    }
+    } */
 
             
 }
