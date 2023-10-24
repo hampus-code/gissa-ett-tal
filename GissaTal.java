@@ -59,8 +59,8 @@ public class GissaTal {
             }
              catch (InputMismatchException e){
                 counter --;
-                 System.out.println("Felaktig inmatning, du måste ange ett tal i siffror! Försök igen!");
-                 scanner.next();
+                System.out.println("Felaktig inmatning, du måste ange ett tal i siffror! Försök igen!");
+                scanner.next();
              }
         
 
@@ -76,7 +76,6 @@ public class GissaTal {
         if (continueOrNot.equalsIgnoreCase("Ja")){
             counter = 0;
             runGame();
-
               
         }
         else if (continueOrNot.equalsIgnoreCase("Nej")){
@@ -91,8 +90,7 @@ public class GissaTal {
         }
 
     }
-
-            
+           
 }
 
 
